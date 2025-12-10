@@ -13,3 +13,14 @@ def count_characters(book_text):
     else:
       characters[char] += 1
   return characters
+
+def sort_on(items):
+    return items["count"]
+
+def sort_characters(characters_dict):
+  character_list = []
+  for char in characters_dict:
+    if char.isalpha():
+      character_list.append({"char": char, "count": characters_dict[char]})
+  character_list.sort(reverse=True, key=sort_on)
+  return character_list
