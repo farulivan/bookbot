@@ -4,3 +4,12 @@ def count_words(book_text):
 def get_book_text(book_path):
   with open(book_path) as f:
     return f.read()
+
+def count_characters(book_text):
+  characters = {}
+  for char in book_text.lower():
+    if char not in characters:
+      characters[char] = 1
+    else:
+      characters[char] += 1
+  return characters
